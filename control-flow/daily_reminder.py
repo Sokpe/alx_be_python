@@ -1,6 +1,6 @@
 Task= input("Enter your task: ").lower()
-Priority= input("What is the priority of this task? (high, medium, low): ").lower()
 Time_Bound=input("Is it time-bound? (yes or no): ").lower()
+Priority= input("What is the priority of this task? (high, medium, low): ").lower()
 
 match task_priority:
       
