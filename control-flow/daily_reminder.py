@@ -20,7 +20,7 @@ def provide_reminder(task, priority, time_bound):
             reminder = f"You have a low-priority task: {task}"
 
     if time_bound == "yes":
-        reminder += " that requires immediate attention today!"
+        reminder += " is a high priority task that requires immediate attention today!"
     else:
         reminder += "."
 
