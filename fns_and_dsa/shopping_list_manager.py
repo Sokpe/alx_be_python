@@ -19,15 +19,17 @@ def display_list(shopping_list):
         for i, item in enumerate(shopping_list, start=1):
             print(f"{i}. {item}")
 
+def display_menu():
+    print("\nShopping List Manager")
+    print("1. Add item")
+    print("2. Remove item")
+    print("3. Display list")
+    print("4. Exit")
+
 def main():
     shopping_list = []
     while True:
-        print("\nShopping List Manager")
-        print("1. Add item")
-        print("2. Remove item")
-        print("3. Display list")
-        print("4. Exit")
-
+        display_menu()
         try:
             choice = int(input("Enter your choice: "))
         except ValueError:
@@ -51,4 +53,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
