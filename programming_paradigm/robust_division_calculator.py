@@ -9,5 +9,5 @@ def safe_divide(numerator, denominator):
         result = numerator / denominator
         return f"{numerator} / {denominator} = {result}"
     except ZeroDivisionError:
+        return "Error: Cannot divide by zero."
 
-        return "Error: Cannot Divide by zero."
