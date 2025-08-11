@@ -4,7 +4,7 @@ class Book:
         self.author = author
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        return f"Book: {self.title} by {self.author}"
 
 class EBook(Book):
     def __init__(self, title, author, file_size):
@@ -12,7 +12,7 @@ class EBook(Book):
         self.file_size = file_size
 
     def __str__(self):
-        return f"EBook: {super().__str__()}, File Size: {self.file_size} KB"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
@@ -20,35 +20,15 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        return f"Print Book: {super().__str__()}, Page Count: {self.page_count}"
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 class Library:
     def __init__(self):
         self.books = []
 
     def add_book(self, book):
-        if isinstance(book, Book):
-            self.books.append(book)
-        else:
-            raise ValueError("Only Book instances can be added to the library.")
+        self.books.append(book)
 
     def list_books(self):
-        if not self.books:
-            print("The library is empty.")
-        else:
-            for book in self.books:
-                print(book)
-
-# Example usage in library_system.py (optional)
-if __name__ == "__main__":
-    library = Library()
-    book1 = Book("Book: Pride and Prejudice", "Jane Austen")
-    ebook1 = EBook("Snow Crash", "Neal Stephenson", 500)
-    print_book1 = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
-
-    library.add_book(book1)
-    library.add_book(ebook1)
-    library.add_book(print_book1)
-
-    library.list_books()
-
+        for book in self.books:
+            print(book)
